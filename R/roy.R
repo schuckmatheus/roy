@@ -1,4 +1,13 @@
-roybose <- function(mod, var, trt, alpha = 0.05) {
+#' roy
+#'
+#' teste roy e bose para comparacoes multiplas
+#'
+#' @param mod modelo
+#' @param var variavel
+#' @param trt tratamento
+#' @param alpha nivel alfa
+#' @export
+roy <- function(mod, var, trt, alpha = 0.05) {
   data <- data.frame(trt = mod[["model"]][[trt]], y = mod[["model"]][[1]][,var])
   means <- data %>% group_by(trt) %>% summarise(y = mean(y)) %>% as.data.frame
 
