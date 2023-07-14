@@ -8,7 +8,6 @@
 #' @param nrep numero de repeticoes
 #' @param alpha nivel alfa
 #' @export
-#'
 roy.vc <- function(mod, escores, trat, nrep, alpha = 0.05) {
 meanstrt <- as.vector(xtabs(escores ~ trat)/nrep)
 treatment <- unique(trat)
